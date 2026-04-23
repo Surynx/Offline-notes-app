@@ -21,7 +21,7 @@ self.addEventListener("activate",(event)=>{
                 keys.map((key)=>{
 
                     if(key != cache_name) {
-                        caches.delete(key);
+                        return caches.delete(key);
                     }
                 })
             ).then(()=>{
