@@ -5,23 +5,26 @@
     font-family: system-ui, -apple-system, sans-serif;
 }
 
+
 body {
     background: #f2f4f7;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
 }
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
 }
+
 
 h1 {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #222;
 }
+
 
 textarea {
     width: 100%;
@@ -33,6 +36,7 @@ textarea {
     font-size: 14px;
     margin-bottom: 10px;
 }
+
 
 button {
     width: 100%;
@@ -46,15 +50,13 @@ button {
     margin-bottom: 15px;
 }
 
-button:hover {
-    opacity: 0.9;
-}
 
 #notesList {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 
 .note {
     background: white;
@@ -64,6 +66,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    word-break: break-word;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
@@ -73,4 +76,62 @@ button:hover {
     font-size: 16px;
     width: auto;
     padding: 0;
+    margin-left: 10px;
+}
+
+
+@media (max-width: 360px) {
+    textarea {
+        height: 90px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width: 600px) {
+    body {
+        padding: 30px;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    textarea {
+        height: 120px;
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+
+@media (min-width: 900px) {
+    body {
+        padding: 50px;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    .note {
+        font-size: 15px;
+        padding: 14px;
+    }
 }
