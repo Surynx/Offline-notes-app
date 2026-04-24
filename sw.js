@@ -1,4 +1,4 @@
-let cache_name = "offline-notes-v6"
+let cache_name = "offline-notes-v7"
 
 let files = [
     "/Offline-notes-app/","/Offline-notes-app/index.html","/Offline-notes-app/main.js"
@@ -9,7 +9,7 @@ self.addEventListener("install",(event)=>{
     event.waitUntil(
         caches.open(cache_name).then((cache)=>{
 
-            return cache.addAll(files).catch((err)=>console.log(err));
+            return cache.addAll(files);
         })
     )
 });

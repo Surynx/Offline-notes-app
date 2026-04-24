@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Offline Notes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <title>Offline Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Instrument Sans"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="min-h-screen bg-amber-50 font-sans px-4 py-8 sm:py-12">
 
-  <div class="max-w-xl mx-auto px-4 py-8">
-    <h1 class="text-3xl mb-1">Notes</h1>
-    <p class="text-sm mb-6 subtitle">Saved locally in your browser</p>
+<div class="container max-w-2xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl font-semibold text-stone-800 mb-6 tracking-tight">Offline Notes Taker</h1>
 
-    <div class="mb-6">
-      <textarea
-        id="noteInput"
-        rows="4"
-        placeholder="What's on your mind?"
-        class="w-full resize-none rounded-xl border p-4 text-sm leading-relaxed"
-        onkeydown="if(event.ctrlKey && event.key==='Enter') addNote()"
-      ></textarea>
-      <div class="flex items-center justify-between mt-3">
-        <span class="hint">Ctrl + Enter to save</span>
-        <button onclick="addNote()" class="add-btn">Add note</button>
-      </div>
-    </div>
+    <textarea
+        id="note"
+        placeholder="Write a note..."
+        class="w-full min-h-[140px] sm:min-h-[160px] p-4 rounded-xl border border-stone-300 bg-white text-stone-700 placeholder-stone-400 text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent resize-y shadow-sm transition"
+    ></textarea>
 
-    <div id="notesList"></div>
-  </div>
+    <button
+        onclick="addNote()"
+        class="mt-3 w-full sm:w-auto px-6 py-3 bg-stone-800 hover:bg-stone-700 active:scale-95 text-white text-sm font-medium rounded-xl transition-all duration-150 shadow-sm"
+    >
+        Add
+    </button>
 
-  <script src="main.js"></script>
+    <div id="notesList" class="mt-6 space-y-3"></div>
+</div>
+
+<script src="main.js"></script>
+
 </body>
 </html>
