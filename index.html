@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Offline Notes</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Offline Notes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Offline Notes Taker</h1>
+  <div class="max-w-xl mx-auto px-4 py-8">
+    <h1 class="text-3xl mb-1">Notes</h1>
+    <p class="text-sm mb-6 subtitle">Saved locally in your browser</p>
 
-    <textarea id="note" placeholder="Write a note..."></textarea>
-
-    <button onclick="addNote()">Add</button>
+    <div class="mb-6">
+      <textarea
+        id="noteInput"
+        rows="4"
+        placeholder="What's on your mind?"
+        class="w-full resize-none rounded-xl border p-4 text-sm leading-relaxed"
+        onkeydown="if(event.ctrlKey && event.key==='Enter') addNote()"
+      ></textarea>
+      <div class="flex items-center justify-between mt-3">
+        <span class="hint">Ctrl + Enter to save</span>
+        <button onclick="addNote()" class="add-btn">Add note</button>
+      </div>
+    </div>
 
     <div id="notesList"></div>
-</div>
+  </div>
 
-<script src="main.js"></script>
-
+  <script src="main.js"></script>
 </body>
 </html>
