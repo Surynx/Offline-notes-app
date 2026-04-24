@@ -11,7 +11,6 @@ if("serviceWorker" in navigator) {
 
 const notesList = document.getElementById("notesList");
 
-
 window.onload = () => {
     renderNotes();
 };
