@@ -1,7 +1,7 @@
 let cache_name = "offline-notes-v6"
 
 let files = [
-    "/Offline-notes-app/","/Offline-notes-app/index.html","/Offline-notes-app/style.css","/Offline-notes-app/main.js"
+    "/Offline-notes-app/","/Offline-notes-app/index.html","/Offline-notes-app/main.js"
 ]
 
 self.addEventListener("install",(event)=>{
