@@ -1,4 +1,4 @@
-let cache_name = "offline-notes-v4"
+let cache_name = "offline-notes-v5"
 
 let files = [
     "/Offline-notes-app/","/Offline-notes-app/index.html","/Offline-notes-app/style.css","/Offline-notes-app/main.js"
